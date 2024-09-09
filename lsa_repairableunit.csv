@@ -1,0 +1,36 @@
+﻿Name,Label,Data Type,Data Source [...],Length,Precision,Scale,Required,Unique,Indexed,Federated,Hidden,Hidden2,Alignment,Width,Sort Order,Keyed Name Order,Order By,Default Value,Default Search,Pattern,Class Path,Foreign Property [...],Tooltip,Help Text [...],Track History,Item Behavior
+cage_code,CAGE,String,,16,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,3456,,,,,,,,,,FALSE,Float
+classification,Classification,String,,512,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,128,,,,,,,description,,,FALSE,Float
+complete_item_name,Description,Foreign,manufacturer_part_number,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,225,3200,,,,,,,name,,,FALSE,Float
+federal_supply_classification,FSC,String,,8,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,3584,,,,,,,,,,FALSE,Float
+manufacturer_part_number,Part Number,Item,Part,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,120,3072,1,,,,,,,,,FALSE,Float
+mean_time_between_failures,MTBF,String,,16,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,4700,,,,,,,,,,FALSE,Float
+national_id_item_number,NIIN,String,,16,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,3500,,,,,,,,,,FALSE,Float
+production_lead_time,Lead Time,Decimal,,,10,2,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,4800,,,,,,,,,,FALSE,Float
+quantity_per_end_item,QTY/EI,Integer,,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,3700,,,,,,,,,,FALSE,Float
+shelf_life,Shelf Life,String,,8,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,4224,,,,,,,,,,FALSE,Float
+unit_of_issue,UI,String,,4,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,3850,,,,,,,,,,FALSE,Float
+unit_price,Unit Price,Decimal,,,10,2,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,4000,,,,,,,,,,FALSE,Float
+config_id,,Item,lsa_RepairableUnit,,,,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,2688,,,,,,,,,,FALSE,Float
+created_by_id,,Item,User,,,,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,640,,,,,,,,,,FALSE,Float
+created_on,,Date,,,,,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,512,,,,,Short Date Time,,,,,FALSE,Float
+css,,Text,,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,2304,,,,,,,,,,FALSE,Float
+current_state,,Item,Life Cycle State,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,1280,,,,,,,,,,FALSE,Float
+generation,,Integer,,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,2432,,,,,,,,,,FALSE,Float
+id,,Item,lsa_RepairableUnit,,,,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,384,,,,,,,,,,FALSE,Float
+is_current,,Boolean,,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,1664,,,,,,,,,,FALSE,Float
+is_released,Released,Boolean,,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,2048,,,,,,,,,,FALSE,Float
+keyed_name,,String,,128,,,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,Left,,256,,,,,,,,,,FALSE,Float
+locked_by_id,,Item,User,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,1536,,,,,,,,,,FALSE,Float
+major_rev,,String,,8,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,1792,,,,,,,,,,FALSE,Float
+managed_by_id,,Item,Identity,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,896,,,,,,,,,,FALSE,Float
+minor_rev,,String,,8,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,1920,,,,,,,,,,FALSE,Float
+modified_by_id,,Item,User,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,1152,,,,,,,,,,FALSE,Float
+modified_on,,Date,,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,1024,,,,,Short Date Time,,,,,FALSE,Float
+new_version,,Boolean,,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,2560,,,,,,,,,,FALSE,Float
+not_lockable,Not Lockable,Boolean,,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,2176,,,,,,,,,,FALSE,Float
+owned_by_id,,Item,Identity,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,768,,,,,,,,,,FALSE,Float
+permission_id,,Item,Permission,,,,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,2816,,,,,,,,,,FALSE,Float
+state,,String,,32,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,1408,,,,,,,,,,FALSE,Float
+team_id,Team,Item,Team,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,,2944,,,,,,,,,,FALSE,Float
+total_quantity_recommended,Total Spares QTY,Integer,,,,,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,Left,150,4928,,,,,,,,,,FALSE,Float
