@@ -21,49 +21,55 @@ public class RepairableUnitCsvReader
             string line;
             while ((line = reader.ReadLine()) != null)
             {
-                var values = line.Split(',');
-                var dto = new RepairableUnitDTO
-                {
-                    CageCode = values[0],
-                    Classification = values[1],
-                    CompleteItemName = values[2],
-                    FederalSupplyClassification = values[3],
-                    ManufacturerPartNumber = values[4],
-                    MeanTimeBetweenFailures = values[5],
-                    NationalIdItemNumber = values[6],
-                    ProductionLeadTime = ParseDecimal(values[7]),
-                    QuantityPerEndItem = ParseInt(values[8]),
-                    ShelfLife = values[9],
-                    UnitOfIssue = values[10],
-                    UnitPrice = ParseDecimal(values[11]),
-                    ConfigId = values[12],
-                    CreatedById = values[13],
-                   // CreatedOn = ParseDateTime(values[14]),
-                    CurrentState = values[15],
-                    Id = values[16],
-                    IsCurrent = ParseBool(values[17]),
-                    IsReleased = ParseBool(values[18]),
-                    KeyedName = values[19],
-                    LockedById = values[20],
-                    MajorRev = values[21],
-                    ManagedById = values[22],
-                    MinorRev = values[23],
-                    ModifiedById = values[24],
-                   // ModifiedOn = ParseDateTime(values[25]),
-                    NewVersion = ParseBool(values[26]),
-                    NotLockable = ParseBool(values[27]),
-                    OwnedById = values[28],
-                    PermissionId = values[29],
-                    State = values[30],
-                    TeamId = values[31],
-                    TotalQuantityRecommended = ParseInt(values[32])
-                };
+                RepairableUnitDTO dto = ProcessLineOfData(line);
 
                 repairableUnits.Add(dto);
             }
         }
 
         return repairableUnits;
+    }
+
+    public RepairableUnitDTO ProcessLineOfData(string line)
+    {
+        var values = line.Split(',');
+        var dto = new RepairableUnitDTO
+        {
+            CageCode = values[0],
+            Classification = values[1],
+            CompleteItemName = values[2],
+            FederalSupplyClassification = values[3],
+            ManufacturerPartNumber = values[4],
+            MeanTimeBetweenFailures = values[5],
+            NationalIdItemNumber = values[6],
+            ProductionLeadTime = ParseDecimal(values[7]),
+            QuantityPerEndItem = ParseInt(values[8]),
+            ShelfLife = values[9],
+            UnitOfIssue = values[10],
+            UnitPrice = ParseDecimal(values[11]),
+            ConfigId = values[12],
+            CreatedById = values[13],
+            // CreatedOn = ParseDateTime(values[14]),
+            CurrentState = values[15],
+            Id = values[16],
+            IsCurrent = ParseBool(values[17]),
+            IsReleased = ParseBool(values[18]),
+            KeyedName = values[19],
+            LockedById = values[20],
+            MajorRev = values[21],
+            ManagedById = values[22],
+            MinorRev = values[23],
+            ModifiedById = values[24],
+            // ModifiedOn = ParseDateTime(values[25]),
+            // NewVersion = ParseBool(values[26]),
+            // NotLockable = ParseBool(values[27]),
+            // OwnedById = values[28],
+            // PermissionId = values[29],
+            // State = values[30],
+            // TeamId = values[31],
+            // TotalQuantityRecommended = ParseInt(values[32])
+        };
+        return dto;
     }
 
     private int? ParseInt(string value)

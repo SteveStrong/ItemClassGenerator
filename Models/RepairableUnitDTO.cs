@@ -40,4 +40,10 @@ public class RepairableUnitDTO
     public string State { get; set; }
     public string TeamId { get; set; }
     public int? TotalQuantityRecommended { get; set; }
+
+    public override string ToString()
+    {
+        return $"CageCode: {CageCode}, Classification: {Classification}, CompleteItemName: {CompleteItemName}, FederalSupplyClassification: {FederalSupplyClassification}, ManufacturerPartNumber: {ManufacturerPartNumber}, MeanTimeBetweenFailures: {MeanTimeBetweenFailures}, NationalIdItemNumber: {NationalIdItemNumber}, ProductionLeadTime: {ProductionLeadTime}, QuantityPerEndItem: {QuantityPerEndItem}, ShelfLife: {ShelfLife}, UnitOfIssue: {UnitOfIssue}, UnitPrice: {UnitPrice}, ConfigId: {ConfigId}, CreatedById: {CreatedById}, CreatedOn: {CreatedOn}, Css: {Css}, CurrentState: {CurrentState}, Generation: {Generation}, Id: {Id}, IsCurrent: {IsCurrent}, IsReleased: {IsReleased}, KeyedName: {KeyedName}, LockedById: {LockedById}, MajorRev: {MajorRev}, ManagedById: {ManagedById}, MinorRev: {MinorRev}, ModifiedById: {ModifiedById}, ModifiedOn: {ModifiedOn}, NewVersion: {NewVersion}, NotLockable: {NotLockable}, OwnedById: {OwnedById}, PermissionId: {PermissionId}, State: {State}, TeamId: {TeamId}, TotalQuantityRecommended: {TotalQuantityRecommended}";
+    }
 }
+
