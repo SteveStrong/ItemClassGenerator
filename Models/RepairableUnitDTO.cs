@@ -1,5 +1,8 @@
 using System;
 
+namespace ItemClassGenerator.Models;
+
+
 public class RepairableUnitDTO
 {
     public string CageCode { get; set; }
