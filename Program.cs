@@ -20,7 +20,10 @@ $"DTO: {dto}".WriteInfo();
 ReflectionPropertyReporter.ReportProperties<RepairableUnitDTO>(dto).WriteNote();
 
 
+var gen = new ArasItemGenerator();
+var result = gen.GenerateItemClass("RepairableUnit", dto);
 
+result.WriteSuccess(2);
 
 
 

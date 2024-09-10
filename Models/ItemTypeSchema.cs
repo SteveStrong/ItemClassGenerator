@@ -1,4 +1,6 @@
-public class RepairableUnit
+
+
+public class ItemTypeSchema
 {
     public string Name { get; set; }
     public string Label { get; set; }
