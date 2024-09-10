@@ -3,7 +3,7 @@ public class RepairableUnit
     public string Name { get; set; }
     public string Label { get; set; }
     public string Data_Type { get; set; }
-    public string Data_Source_[...] { get; set; }
+    public string Data_Source { get; set; }
     public string Length { get; set; }
     public string Precision { get; set; }
     public string Scale { get; set; }
@@ -22,9 +22,9 @@ public class RepairableUnit
     public string Default_Search { get; set; }
     public string Pattern { get; set; }
     public string Class_Path { get; set; }
-    public string Foreign_Property_[...] { get; set; }
+    public string Foreign_Property { get; set; }
     public string Tooltip { get; set; }
-    public string Help_Text_[...] { get; set; }
+    public string Help_Text { get; set; }
     public string Track_History { get; set; }
     public string Item_Behavior { get; set; }
 }

@@ -1,4 +1,4 @@
-﻿Name,Label,Data Type,Data Source [...],Length,Precision,Scale,Required,Unique,Indexed,Federated,Hidden,Hidden2,Alignment,Width,Sort Order,Keyed Name Order,Order By,Default Value,Default Search,Pattern,Class Path,Foreign Property [...],Tooltip,Help Text [...],Track History,Item Behavior
+﻿Name,Label,Data Type,Data Source,Length,Precision,Scale,Required,Unique,Indexed,Federated,Hidden,Hidden2,Alignment,Width,Sort Order,Keyed Name Order,Order By,Default Value,Default Search,Pattern,Class Path,Foreign Property,Tooltip,Help Text,Track History,Item Behavior
 cage_code,CAGE,String,,16,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,3456,,,,,,,,,,FALSE,Float
 classification,Classification,String,,512,,,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,,128,,,,,,,description,,,FALSE,Float
 complete_item_name,Description,Foreign,manufacturer_part_number,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,225,3200,,,,,,,name,,,FALSE,Float
