@@ -1,11 +1,10 @@
 
 
-using System.Text;
 using FoundryRulesAndUnits.Extensions;
-using ItemClassGenerator.Models;
 
 
-namespace ItemClassGenerator.Reader;
+
+namespace ItemClassGenerator.Models;
 
 public record SourceSpec(string Folder, string Filename);
 
@@ -61,7 +60,6 @@ public class BatchTools
         var batch = new List<SourceSpec>();
 
         var source = ClientPath(root);
-        $"Source: {source}".WriteInfo();
         var folders = Directory.GetDirectories(source);
 
         foreach (var folder in folders)
@@ -77,11 +75,20 @@ public class BatchTools
 
         return batch;
     }
+    // public async Task<string> ReadFileToStringAsync(IBrowserFile file)
+    // {
+    //     using var stream = file.OpenReadStream();
+    //     using var memoryStream = new MemoryStream();
+    //     await stream.CopyToAsync(memoryStream);
+    //     return Encoding.UTF8.GetString(memoryStream.ToArray());
+    // }
+    
+
 
 
     public void BatchCompileExcel(string root)
     {
-
+        //var compiler = new ManifestCompiler();
 
         var sources = GetSourceExcelFiles(root);
         foreach (var source in sources)
@@ -113,5 +120,6 @@ public class BatchTools
         }
     }
 
-
+      
+ 
 }

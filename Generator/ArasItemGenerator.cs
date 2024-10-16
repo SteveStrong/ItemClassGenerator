@@ -1,5 +1,6 @@
 
 
+using ItemClassGenerator.Models;
 using System.Text;
 
 public class ArasItemGenerator
@@ -9,13 +10,12 @@ public class ArasItemGenerator
         
     }
 
-    public string GenerateItemClass(string className)
+    public string GenerateItemClass(string className, ItemTypeSchema dto)
     {
         var sb = new StringBuilder();
         sb.AppendLine($"using System;");
         sb.AppendLine();
-        sb.AppendLine($"namespace ItemClassGenerator.Models;");
-        sb.AppendLine();
+
         sb.AppendLine();
         sb.AppendLine($"public class {className}");
         sb.AppendLine("{");

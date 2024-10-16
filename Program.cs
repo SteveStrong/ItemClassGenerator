@@ -7,7 +7,7 @@ using ItemClassGenerator.Reader;
 "Getting Started with c# item class generator".WriteSuccess();
 
 
-var data = "CageCode,Classification,CompleteItemName,FederalSupplyClassification,ManufacturerPartNumber,MeanTimeBetweenFailures,NationalIdItemNumber,ProductionLeadTime,QuantityPerEndItem,ShelfLife,UnitOfIssue,UnitPrice,ConfigId,CreatedById,CreatedOn,CurrentState,Id,IsCurrent,IsReleased,KeyedName,LockedById,MajorRev,ManagedById,MinorRev,ModifiedById,ModifiedOn,NewVersion,NotLockable,OwnedById,PermissionId,State,TeamId,TotalQuantityRecommended\n";
+//var data = "CageCode,Classification,CompleteItemName,FederalSupplyClassification,ManufacturerPartNumber,MeanTimeBetweenFailures,NationalIdItemNumber,ProductionLeadTime,QuantityPerEndItem,ShelfLife,UnitOfIssue,UnitPrice,ConfigId,CreatedById,CreatedOn,CurrentState,Id,IsCurrent,IsReleased,KeyedName,LockedById,MajorRev,ManagedById,MinorRev,ModifiedById,ModifiedOn,NewVersion,NotLockable,OwnedById,PermissionId,State,TeamId,TotalQuantityRecommended\n";
 
 var data1 = "complete_item_name,Description,Foreign,manufacturer_part_number,,,,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Left,225,3200,,,,,,,name,,,FALSE,Float";
 
@@ -17,7 +17,7 @@ var dto = reader.ProcessLineOfData(data1);
 $"DTO: {dto}".WriteInfo();
 
 
-ReflectionPropertyReporter.ReportProperties<RepairableUnitDTO>(dto).WriteNote();
+ReflectionPropertyReporter.ReportProperties<ItemTypeSchema>(dto).WriteNote();
 
 
 var gen = new ArasItemGenerator();

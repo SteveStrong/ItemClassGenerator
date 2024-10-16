@@ -1,6 +1,7 @@
 
+namespace ItemClassGenerator.Models;
 
-public class ItemTypeSchema
+public class ItemTypeSchema : Import_Base
 {
     public string Name { get; set; }
     public string Label { get; set; }

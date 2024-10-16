@@ -2,6 +2,8 @@ using System;
 using System.Reflection;
 using System.Text;
 
+namespace ItemClassGenerator.Reader;
+
 public static class ReflectionPropertyReporter
 {
     public static string ReportProperties<T>(T obj) where T : class
