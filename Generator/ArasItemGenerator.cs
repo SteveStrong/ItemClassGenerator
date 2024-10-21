@@ -3,6 +3,8 @@
 using ItemClassGenerator.Models;
 using System.Text;
 
+namespace ItemClassGenerator.Generators;
+
 public class ArasItemGenerator
 {
     public ArasItemGenerator()
