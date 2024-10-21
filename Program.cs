@@ -18,10 +18,6 @@ var inputs = batch.BatchConsumeExcel("Input");
 var gen = new ArasItemGenerator();
 foreach (var input in inputs)
 {
-    // foreach (var item in input.ItemType)
-    // {
-    //     ReflectionPropertyReporter.ReportProperties<ItemTypeSchema>(item).WriteNote();
-    // }
 
     "......................".WriteInfo();
     "Generating item class".WriteInfo();
@@ -47,17 +43,18 @@ WriteDataSetToExcel(dataSet, "output.xlsx");
 static void AddDataToDataSet(DataSet dataSet)
 {
     // Add a table for sales data
-    DataTable salesData = new DataTable("Sales");
-    salesData.Columns.Add("Product", typeof(string));
-    salesData.Columns.Add("Quantity", typeof(int));
-    salesData.Columns.Add("Revenue", typeof(decimal));
-    salesData.Rows.Add("Widget A", 100, 1500.00M);
-    salesData.Rows.Add("Widget B", 75, 1200.00M);
-    salesData.Rows.Add("Widget C", 50, 800.00M);
+    DataTable salesData = new DataTable("Support Equipment");
+    salesData.Columns.Add("Support Equipment ID", typeof(string));
+    salesData.Columns.Add("Support Equipment Name", typeof(string));
+    salesData.Columns.Add("Life", typeof(string));
+
+    salesData.Rows.Add("Support Equipment ID", "Support Equipment Name", "Life");
+    salesData.Rows.Add("se-1", "AN/PSM-45", "10");
+
     dataSet.Tables.Add(salesData);
 
     // Add a table for inventory data
-    DataTable inventoryData = new DataTable("Inventory");
+    DataTable inventoryData = new DataTable("Personnel");
     inventoryData.Columns.Add("Product", typeof(string));
     inventoryData.Columns.Add("Stock", typeof(int));
     inventoryData.Rows.Add("Widget A", 250);
