@@ -10,7 +10,7 @@ public class ArasItemGenerator
         
     }
 
-    public string GenerateItemClass(string className, ItemTypeSchema dto)
+    public string GenerateItemClass(string className, List<ItemTypeSchema> schema)
     {
         var sb = new StringBuilder();
         sb.AppendLine($"using System;");

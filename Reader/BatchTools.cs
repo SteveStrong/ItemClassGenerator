@@ -87,9 +87,11 @@ public class BatchTools
 
     
 
-    public void BatchConsumeExcel(string root)
+    public List<Import_ExcelData> BatchConsumeExcel(string root)
     {
         //var compiler = new ManifestCompiler();
+        var list = new List<Import_ExcelData>();
+
         var sources = GetSourceExcelFiles(root);
         foreach (var source in sources)
         {
@@ -99,6 +101,8 @@ public class BatchTools
 
             var reader = new ManifestReader();
             var manifest = reader.ReadExcelManifest(source.Folder, source.Filename);
+            manifest.filename = source.Filename;
+
             reader.WriteErrors();
             reader.WriteWarnings();
 
@@ -108,12 +112,11 @@ public class BatchTools
             var folder = ServerPath(root, source.Folder);
             FileHelpers.WriteData(folder, filename, json);
 
-
-            if (reader.ErrorCount() > 0) return;
-
-            manifest.filename = source.Filename;
+            list.Add(manifest);
 
         }
+        return list;
+
     }
 
       
