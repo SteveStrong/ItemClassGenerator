@@ -26,6 +26,19 @@ public class BatchTools
         return source;
     }
 
+    public string WriteData(string folder, string filename, string data)
+    {
+        try
+        {
+            FileHelpers.WriteData(folder, filename, data);
+            return data;
+        }
+        catch (Exception ex)
+        {
+            //AddStatus<DT_Error>($"WriteToFolder {ex.Message}");
+            return ex.Message;
+        }
+    }
 
     public string WriteToFolder<T>(string folder, string filename, T source) where T : class
     {

@@ -1,0 +1,384 @@
+using System;
+
+
+public class RepairableUnit
+{
+   public string CageCode {
+                get {
+                    return (string)GetProperty("cage_code");
+                }; 
+                set {
+                    SetProperty("cage_code", value);
+                };
+            }
+
+   public string Classification {
+                get {
+                    return (string)GetProperty("classification");
+                }; 
+                set {
+                    SetProperty("classification", value);
+                };
+            }
+
+   public string ItemName {
+                get {
+                    return (string)GetProperty("complete_item_name");
+                }; 
+                set {
+                    SetProperty("complete_item_name", value);
+                };
+            }
+
+   public bool ContractorRepairConsidered {
+                get {
+                    return (bool)GetProperty("contractor_repair_considered");
+                }; 
+                set {
+                    SetProperty("contractor_repair_considered", value);
+                };
+            }
+
+   public string FSC {
+                get {
+                    return (string)GetProperty("federal_supply_classification");
+                }; 
+                set {
+                    SetProperty("federal_supply_classification", value);
+                };
+            }
+
+   public string LCN {
+                get {
+                    return (string)GetProperty("logistics_control_number");
+                }; 
+                set {
+                    SetProperty("logistics_control_number", value);
+                };
+            }
+
+   public string MTBF {
+                get {
+                    return (string)GetProperty("mean_time_between_failures");
+                }; 
+                set {
+                    SetProperty("mean_time_between_failures", value);
+                };
+            }
+
+   public string NIIN {
+                get {
+                    return (string)GetProperty("national_id_item_number");
+                }; 
+                set {
+                    SetProperty("national_id_item_number", value);
+                };
+            }
+
+   public string NSN {
+                get {
+                    return (string)GetProperty("national_stock_number");
+                }; 
+                set {
+                    SetProperty("national_stock_number", value);
+                };
+            }
+
+   public float Packaged/ShippingWeight {
+                get {
+                    return (float)GetProperty("packaged_weight");
+                }; 
+                set {
+                    SetProperty("packaged_weight", value);
+                };
+            }
+
+   public string PartDescription {
+                get {
+                    return (string)GetProperty("part_description");
+                }; 
+                set {
+                    SetProperty("part_description", value);
+                };
+            }
+
+   public object PartNumber {
+                get {
+                    return (object)GetProperty("part_id");
+                }; 
+                set {
+                    SetProperty("part_id", value);
+                };
+            }
+
+   public decimal LeadTime {
+                get {
+                    return (decimal)GetProperty("production_lead_time");
+                }; 
+                set {
+                    SetProperty("production_lead_time", value);
+                };
+            }
+
+   public int QTY/EI {
+                get {
+                    return (int)GetProperty("quantity_per_end_item");
+                }; 
+                set {
+                    SetProperty("quantity_per_end_item", value);
+                };
+            }
+
+   public string ShelfLife {
+                get {
+                    return (string)GetProperty("shelf_life");
+                }; 
+                set {
+                    SetProperty("shelf_life", value);
+                };
+            }
+
+   public string SMRCode {
+                get {
+                    return (string)GetProperty("smr_code");
+                }; 
+                set {
+                    SetProperty("smr_code", value);
+                };
+            }
+
+   public string UI {
+                get {
+                    return (string)GetProperty("unit_of_issue");
+                }; 
+                set {
+                    SetProperty("unit_of_issue", value);
+                };
+            }
+
+   public decimal UnitPrice {
+                get {
+                    return (decimal)GetProperty("unit_price");
+                }; 
+                set {
+                    SetProperty("unit_price", value);
+                };
+            }
+
+   public object config_id {
+                get {
+                    return (object)GetProperty("config_id");
+                }; 
+                set {
+                    SetProperty("config_id", value);
+                };
+            }
+
+   public object created_by_id {
+                get {
+                    return (object)GetProperty("created_by_id");
+                }; 
+                set {
+                    SetProperty("created_by_id", value);
+                };
+            }
+
+   public object created_on {
+                get {
+                    return (object)GetProperty("created_on");
+                }; 
+                set {
+                    SetProperty("created_on", value);
+                };
+            }
+
+   public string css {
+                get {
+                    return (string)GetProperty("css");
+                }; 
+                set {
+                    SetProperty("css", value);
+                };
+            }
+
+   public object current_state {
+                get {
+                    return (object)GetProperty("current_state");
+                }; 
+                set {
+                    SetProperty("current_state", value);
+                };
+            }
+
+   public string FalseRemovalRate {
+                get {
+                    return (string)GetProperty("false_removal_rate");
+                }; 
+                set {
+                    SetProperty("false_removal_rate", value);
+                };
+            }
+
+   public int generation {
+                get {
+                    return (int)GetProperty("generation");
+                }; 
+                set {
+                    SetProperty("generation", value);
+                };
+            }
+
+   public object id {
+                get {
+                    return (object)GetProperty("id");
+                }; 
+                set {
+                    SetProperty("id", value);
+                };
+            }
+
+   public bool is_current {
+                get {
+                    return (bool)GetProperty("is_current");
+                }; 
+                set {
+                    SetProperty("is_current", value);
+                };
+            }
+
+   public bool Released {
+                get {
+                    return (bool)GetProperty("is_released");
+                }; 
+                set {
+                    SetProperty("is_released", value);
+                };
+            }
+
+   public string keyed_name {
+                get {
+                    return (string)GetProperty("keyed_name");
+                }; 
+                set {
+                    SetProperty("keyed_name", value);
+                };
+            }
+
+   public object locked_by_id {
+                get {
+                    return (object)GetProperty("locked_by_id");
+                }; 
+                set {
+                    SetProperty("locked_by_id", value);
+                };
+            }
+
+   public string major_rev {
+                get {
+                    return (string)GetProperty("major_rev");
+                }; 
+                set {
+                    SetProperty("major_rev", value);
+                };
+            }
+
+   public object managed_by_id {
+                get {
+                    return (object)GetProperty("managed_by_id");
+                }; 
+                set {
+                    SetProperty("managed_by_id", value);
+                };
+            }
+
+   public string minor_rev {
+                get {
+                    return (string)GetProperty("minor_rev");
+                }; 
+                set {
+                    SetProperty("minor_rev", value);
+                };
+            }
+
+   public object modified_by_id {
+                get {
+                    return (object)GetProperty("modified_by_id");
+                }; 
+                set {
+                    SetProperty("modified_by_id", value);
+                };
+            }
+
+   public object modified_on {
+                get {
+                    return (object)GetProperty("modified_on");
+                }; 
+                set {
+                    SetProperty("modified_on", value);
+                };
+            }
+
+   public bool new_version {
+                get {
+                    return (bool)GetProperty("new_version");
+                }; 
+                set {
+                    SetProperty("new_version", value);
+                };
+            }
+
+   public bool NotLockable {
+                get {
+                    return (bool)GetProperty("not_lockable");
+                }; 
+                set {
+                    SetProperty("not_lockable", value);
+                };
+            }
+
+   public object owned_by_id {
+                get {
+                    return (object)GetProperty("owned_by_id");
+                }; 
+                set {
+                    SetProperty("owned_by_id", value);
+                };
+            }
+
+   public object permission_id {
+                get {
+                    return (object)GetProperty("permission_id");
+                }; 
+                set {
+                    SetProperty("permission_id", value);
+                };
+            }
+
+   public string state {
+                get {
+                    return (string)GetProperty("state");
+                }; 
+                set {
+                    SetProperty("state", value);
+                };
+            }
+
+   public object Team {
+                get {
+                    return (object)GetProperty("team_id");
+                }; 
+                set {
+                    SetProperty("team_id", value);
+                };
+            }
+
+   public int TotalSparesQTY {
+                get {
+                    return (int)GetProperty("total_quantity_recommended");
+                }; 
+                set {
+                    SetProperty("total_quantity_recommended", value);
+                };
+            }
+
+}

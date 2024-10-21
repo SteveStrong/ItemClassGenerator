@@ -26,7 +26,7 @@ foreach (var input in inputs)
     "......................".WriteInfo();
     "Generating item class".WriteInfo();
     var result = gen.GenerateItemClass("RepairableUnit", input.ItemType);
-    result.WriteSuccess(2);
+    batch.WriteData("Output", "RepairableUnit.cs.txt", result);
 }
 
 
