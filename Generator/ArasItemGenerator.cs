@@ -32,13 +32,19 @@ public class ArasItemGenerator
     public string GenerateItemProperty(ItemTypeSchema schema)
     {
         var propertytype = MapDataType(schema.DataType);
+        var propertyname = schema.Label ?? schema.Name;
+        propertyname = propertyname.Replace(" ", "");
 
         var sb = new StringBuilder();
-        sb.AppendLine($@"   public {propertytype} {schema.Name} {{
-
-            get; set;
+        sb.AppendLine($@"   public {propertytype} {propertyname} {{
+                get {{
+                    return ({propertytype})GetProperty(""{schema.Name}"");
+                }}; 
+                set {{
+                    SetProperty(""{schema.Name}"", value);
+                }};
             }}");
-            
+
         return sb.ToString();
     }
 
