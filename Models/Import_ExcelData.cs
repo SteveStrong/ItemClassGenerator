@@ -128,6 +128,7 @@ public class Import_ExcelData
                 //else
                 //    $"Error: {sheetname} {domain} {kvp.Key} {kvp.Value.Name} is empty".WriteError();
             }
+            list.Add(source);
         }
 
         return list;
@@ -141,7 +142,7 @@ public class Import_ExcelData
 
         var lookup = new Dictionary<string, Action<string,string>>() {
 
-            {"ITEM", (dom,name)=> {
+            {"PROPERTY", (dom,name)=> {
                 ItemType ??= new List<ItemTypeSchema>();
                 ItemType.AddRange(DataReader<ItemTypeSchema>(workSheet,dom,name));
             }},
