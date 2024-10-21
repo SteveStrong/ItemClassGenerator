@@ -116,7 +116,6 @@ public class Import_ExcelData
         {
             var source = Activator.CreateInstance<T>();
             source.SheetName = sheetname.Trim();
-            source.domain = domain.Trim();;
 
             foreach (KeyValuePair<int, PropertyInfo> kvp in columnDict)
             {
@@ -129,9 +128,6 @@ public class Import_ExcelData
                 //else
                 //    $"Error: {sheetname} {domain} {kvp.Key} {kvp.Value.Name} is empty".WriteError();
             }
-
-
-
         }
 
         return list;

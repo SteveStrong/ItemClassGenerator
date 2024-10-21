@@ -1,8 +1,9 @@
 
 
-using System.Text;
 using FoundryRulesAndUnits.Extensions;
 using ItemClassGenerator.Models;
+using System.Diagnostics;
+
 
 
 namespace ItemClassGenerator.Reader;
@@ -26,46 +27,51 @@ public class BatchTools
     }
 
 
-    // public string WriteToFolder<T>(string folder, string filename, T source) where T : class
-    // {
-    //     try
-    //     {
-    //         var result = CodingExtensions.Dehydrate<T>(source, true);
-    //         FileHelpers.WriteData(folder, filename, result);
-    //         return result;
-    //     }
-    //     catch (Exception ex)
-    //     {
-    //         //AddStatus<DT_Error>($"WriteToFolder {ex.Message}");
-    //         return ex.Message;
-    //     }
-    // }
+    public string WriteToFolder<T>(string folder, string filename, T source) where T : class
+    {
+        try
+        {
+            var result = CodingExtensions.Dehydrate<T>(source, true);
+            FileHelpers.WriteData(folder, filename, result);
+            return result;
+        }
+        catch (Exception ex)
+        {
+            //AddStatus<DT_Error>($"WriteToFolder {ex.Message}");
+            return ex.Message;
+        }
+    }
 
-    // public T ReadFromFolder<T>(string folder, string filename) where T : class
-    // {
-    //     try
-    //     {
-    //         var text = FileHelpers.ReadData(folder, filename);
-    //         var result = CodingExtensions.Hydrate<T>(text, true);
-    //         return result;
-    //     }
-    //     catch (Exception ex)
-    //     {
-    //         //AddStatus<DT_Error>($"ReadFromFolder {ex.Message}");
-    //         return null;
-    //     }
-    // }
+    public T ReadFromFolder<T>(string folder, string filename) where T : class
+    {
+        try
+        {
+            var text = FileHelpers.ReadData(folder, filename);
+            var result = CodingExtensions.Hydrate<T>(text, true);
+            return result;
+        }
+        catch (Exception ex)
+        {
+            //AddStatus<DT_Error>($"ReadFromFolder {ex.Message}");
+            return null;
+        }
+    }
 
     public List<SourceSpec> GetSourceExcelFiles(string root, string target="")
     {
         var batch = new List<SourceSpec>();
 
         var source = ClientPath(root);
-        $"Source: {source}".WriteInfo();
-        var folders = Directory.GetDirectories(source);
+        var extra = @"\bin\Debug\net8.0";
+        var directory = source.Replace(extra, "");
 
+        "".WriteInfo();
+        $"GetSourceExcelFiles source {directory}".WriteInfo();
+
+        var folders = Directory.GetDirectories(directory);
         foreach (var folder in folders)
         {
+            $"GetSourceExcel Folder {folder}".WriteNote();
             var files = Directory.GetFiles(folder);
             foreach (var file in files)
             {
@@ -79,10 +85,11 @@ public class BatchTools
     }
 
 
-    public void BatchCompileExcel(string root)
+    
+
+    public void BatchConsumeExcel(string root)
     {
-
-
+        //var compiler = new ManifestCompiler();
         var sources = GetSourceExcelFiles(root);
         foreach (var source in sources)
         {
@@ -106,12 +113,9 @@ public class BatchTools
 
             manifest.filename = source.Filename;
 
-            //compiler.CompileManifest(manifest, service!);
-            //compiler.WriteErrors();
-            //compiler.WriteWarnings();
-            //compiler.WriteSuccesses();
         }
     }
 
-
+      
+ 
 }
