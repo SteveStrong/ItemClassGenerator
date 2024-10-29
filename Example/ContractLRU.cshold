@@ -1,0 +1,78 @@
+﻿// <copyright file="ContractLRU.cs" company="SAIC.ReadyOne">
+// Copyright (c) SAIC. All rights reserved.
+// </copyright>
+
+using Aras.IOM;
+using ReadyOne.Common;
+using ReadyOne.Common.Extensions;
+using ReadyOne.Common.Helpers;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ReadyOne.SupportAnalysis.Models
+{
+	/// <summary>
+	/// 
+	///
+	/// </summary>
+	public partial class ContractLRU : ReadyOne.Common.Models.IRelationshipType
+	{
+		#region ctor
+		public ContractLRU(IDataAccessLayer dal, Item item = null, string _type = "cnt_Contract LRU") : base(dal, item, _type)
+		{
+		}
+		#endregion
+
+		#region Properties
+
+		#endregion
+
+		#region ExtendedProperties
+
+		public Contract Contract
+		{
+			get
+			{
+				RelatedItem ??= dal.GetItem("cnt_Contract", RelatedID);
+				return new(dal, RelatedItem);
+			}
+			set { this.SetPropertyItem("related_id", value.Item); }
+		}
+
+		public RepairableUnit RepairableUnit
+		{
+			get
+			{
+				RelatedItem ??= dal.GetItem("lsa_RepairableUnit", RelatedID);
+				return new(dal, RelatedItem);
+			}
+			set { this.SetPropertyItem("related_id", value.Item); }
+		}
+
+		/// <summary>
+		/// Gets/sets the 'ContractLRU Location' Relationship
+		/// </summary>
+		public List<ContractLRULocation> LRULocations
+		{
+			get
+			{
+				var name = "cnt_ContractLRU Location";
+				this.MergeRelationship(dal, name);
+				Item relItems = this.Item.getRelationships(name);
+
+				return ItemHelper.ConvertItemToCollection(relItems)
+					.Select(r => new ContractLRULocation(dal, r))
+					.ToList();
+			}
+			set
+			{
+				foreach (ContractLRULocation loc in value)
+				{
+					this.AddRelationship(loc.Item);
+				}
+			}
+		}
+
+		#endregion
+	}
+}
