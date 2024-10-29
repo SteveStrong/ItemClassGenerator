@@ -1,0 +1,2 @@
+ID,Name,CAGE,Part Number,NSN or NIIN,LCN,SMR Code,Number of Parts,Number Needing NSN,False Removal Rate,MTBF,Average Replacement Price,Average Replacement Weight,End Item Peculiar Repair?,MTTR with Peculiar Repair,Redundancy,Number Redundant,Number Redundant Required,Issue EI Float,Is Multiple Instance,Number of Instances
+lruid-5,Signal Generator,,,,,,4,0,0,14000,500,2,False,0,False,0,0,False,False,0

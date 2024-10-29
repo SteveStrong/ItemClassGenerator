@@ -1,0 +1,2 @@
+Contractor Repair,Redundant LRUs,ORG Label,DSU Label,GSU Label,Depot Label,End Item Label,LRU Label,SRU Label,Turn Around Time - ORG,Turn Around Time - DSU,Turn Around Time - GSU,Turn Around Time - DEPOT,Classification Level
+True,True,ORG,DSU,GSU,DEPOT,End Item,LRU,SRU,15,45,90,180,NONE

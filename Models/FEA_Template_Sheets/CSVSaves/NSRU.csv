@@ -1,0 +1,2 @@
+ID,Name,CAGE,Part Number,NSN or NIIN,LCN,SMR Code,False Removal Rate,Number of Parts,Number or Parts Needing NSN,Total Price of Parts for Average Replacement ($),Weight of Parts for Average Replacement (lbs),Parent LRU Id,Parent LRU Name,MTBF
+sruid-1,Battery,MDP81,BA-7152,999999999,ACA,PAZZZ,0.05,1,0,75,0,lruid-4,Power Supply,3600
