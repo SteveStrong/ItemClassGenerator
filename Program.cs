@@ -18,11 +18,13 @@ var inputs = batch.BatchConsumeExcel("Input");
 var gen = new ArasItemGenerator();
 foreach (var input in inputs)
 {
-
+    var filename = input.filename;
+    var className = filename.Replace(".xlsx", "");
+    var outputName = filename.Replace(".xlsx", ".cstxt");
     "......................".WriteInfo();
-    "Generating item class".WriteInfo();
-    var result = gen.GenerateItemClass("RepairableUnit", input.ItemType);
-    batch.WriteData("Output", "RepairableUnit.cs.txt", result);
+    $"Generating item class {className}".WriteInfo();
+    var result = gen.GenerateItemClass(className, input.ItemType);
+    batch.WriteData("Output", outputName, result);
 }
 
 
@@ -30,9 +32,9 @@ foreach (var input in inputs)
 //here is an example for writing a dataset to excel
 //this could help in writing the FEA_Template file to excel
 
-DataSet dataSet = new DataSet();
+// DataSet dataSet = new DataSet();
 
-var compass = new CompassGenerator();
-compass.AddDataToDataSet(dataSet);
-compass.WriteDataSetToExcel(dataSet, "output.xlsx");
+// var compass = new CompassGenerator();
+// compass.AddDataToDataSet(dataSet);
+// compass.WriteDataSetToExcel(dataSet, "output.xlsx");
 
