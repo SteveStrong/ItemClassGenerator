@@ -1,0 +1,233 @@
+ using Aras.IOM;
+ using ReadyOne.Common;
+
+ namespace ReadyOne.SupportAnalysis.Models
+ {
+       public partial class lsa_RepairableUnit : ReadyOne.Common.Models.IItemType
+       {
+       	#region ctor 
+               public lsa_RepairableUnit(IDataAccessLayer dal, Item item = null, string _type = "lsa_RepairableUnit", string action = null) : base(dal, item, _type, action)
+               {
+               }
+           #endregion
+
+           #region Properties
+
+                              public string CageCode
+               {
+                   get { return (string)this.GetProperty("cage_code"); }
+                   set { this.SetProperty("cage_code", value); }
+               }
+               public string Classification
+               {
+                   get { return (string)this.GetProperty("classification"); }
+                   set { this.SetProperty("classification", value); }
+               }
+               public string ItemName
+               {
+                   get { return (string)this.GetProperty("complete_item_name"); }
+                   set { this.SetProperty("complete_item_name", value); }
+               }
+               public bool ContractorRepairConsidered
+               {
+                   get { return (bool)this.GetProperty("contractor_repair_considered"); }
+                   set { this.SetProperty("contractor_repair_considered", value); }
+               }
+               public string FSC
+               {
+                   get { return (string)this.GetProperty("federal_supply_classification"); }
+                   set { this.SetProperty("federal_supply_classification", value); }
+               }
+               public string LCN
+               {
+                   get { return (string)this.GetProperty("logistics_control_number"); }
+                   set { this.SetProperty("logistics_control_number", value); }
+               }
+               public string MTBF
+               {
+                   get { return (string)this.GetProperty("mean_time_between_failures"); }
+                   set { this.SetProperty("mean_time_between_failures", value); }
+               }
+               public string NIIN
+               {
+                   get { return (string)this.GetProperty("national_id_item_number"); }
+                   set { this.SetProperty("national_id_item_number", value); }
+               }
+               public string NSN
+               {
+                   get { return (string)this.GetProperty("national_stock_number"); }
+                   set { this.SetProperty("national_stock_number", value); }
+               }
+               public float PackagedShippingWeight
+               {
+                   get { return (float)this.GetProperty("packaged_weight"); }
+                   set { this.SetProperty("packaged_weight", value); }
+               }
+               public string PartDescription
+               {
+                   get { return (string)this.GetProperty("part_description"); }
+                   set { this.SetProperty("part_description", value); }
+               }
+               public object PartNumber
+               {
+                   get { return (object)this.GetProperty("part_id"); }
+                   set { this.SetProperty("part_id", value); }
+               }
+               public decimal LeadTime
+               {
+                   get { return (decimal)this.GetProperty("production_lead_time"); }
+                   set { this.SetProperty("production_lead_time", value); }
+               }
+               public int QtyEi
+               {
+                   get { return (int)this.GetProperty("quantity_per_end_item"); }
+                   set { this.SetProperty("quantity_per_end_item", value); }
+               }
+               public string ShelfLife
+               {
+                   get { return (string)this.GetProperty("shelf_life"); }
+                   set { this.SetProperty("shelf_life", value); }
+               }
+               public string SMRCode
+               {
+                   get { return (string)this.GetProperty("smr_code"); }
+                   set { this.SetProperty("smr_code", value); }
+               }
+               public string UI
+               {
+                   get { return (string)this.GetProperty("unit_of_issue"); }
+                   set { this.SetProperty("unit_of_issue", value); }
+               }
+               public decimal UnitPrice
+               {
+                   get { return (decimal)this.GetProperty("unit_price"); }
+                   set { this.SetProperty("unit_price", value); }
+               }
+               public object ConfigId
+               {
+                   get { return (object)this.GetProperty("config_id"); }
+                   set { this.SetProperty("config_id", value); }
+               }
+               public object CreatedById
+               {
+                   get { return (object)this.GetProperty("created_by_id"); }
+                   set { this.SetProperty("created_by_id", value); }
+               }
+               public object CreatedOn
+               {
+                   get { return (object)this.GetProperty("created_on"); }
+                   set { this.SetProperty("created_on", value); }
+               }
+               public string Css
+               {
+                   get { return (string)this.GetProperty("css"); }
+                   set { this.SetProperty("css", value); }
+               }
+               public object CurrentState
+               {
+                   get { return (object)this.GetProperty("current_state"); }
+                   set { this.SetProperty("current_state", value); }
+               }
+               public string FalseRemovalRate
+               {
+                   get { return (string)this.GetProperty("false_removal_rate"); }
+                   set { this.SetProperty("false_removal_rate", value); }
+               }
+               public int Generation
+               {
+                   get { return (int)this.GetProperty("generation"); }
+                   set { this.SetProperty("generation", value); }
+               }
+               public object Id
+               {
+                   get { return (object)this.GetProperty("id"); }
+                   set { this.SetProperty("id", value); }
+               }
+               public bool IsCurrent
+               {
+                   get { return (bool)this.GetProperty("is_current"); }
+                   set { this.SetProperty("is_current", value); }
+               }
+               public bool Released
+               {
+                   get { return (bool)this.GetProperty("is_released"); }
+                   set { this.SetProperty("is_released", value); }
+               }
+               public string KeyedName
+               {
+                   get { return (string)this.GetProperty("keyed_name"); }
+                   set { this.SetProperty("keyed_name", value); }
+               }
+               public object LockedById
+               {
+                   get { return (object)this.GetProperty("locked_by_id"); }
+                   set { this.SetProperty("locked_by_id", value); }
+               }
+               public string MajorRev
+               {
+                   get { return (string)this.GetProperty("major_rev"); }
+                   set { this.SetProperty("major_rev", value); }
+               }
+               public object ManagedById
+               {
+                   get { return (object)this.GetProperty("managed_by_id"); }
+                   set { this.SetProperty("managed_by_id", value); }
+               }
+               public string MinorRev
+               {
+                   get { return (string)this.GetProperty("minor_rev"); }
+                   set { this.SetProperty("minor_rev", value); }
+               }
+               public object ModifiedById
+               {
+                   get { return (object)this.GetProperty("modified_by_id"); }
+                   set { this.SetProperty("modified_by_id", value); }
+               }
+               public object ModifiedOn
+               {
+                   get { return (object)this.GetProperty("modified_on"); }
+                   set { this.SetProperty("modified_on", value); }
+               }
+               public bool NewVersion
+               {
+                   get { return (bool)this.GetProperty("new_version"); }
+                   set { this.SetProperty("new_version", value); }
+               }
+               public bool NotLockable
+               {
+                   get { return (bool)this.GetProperty("not_lockable"); }
+                   set { this.SetProperty("not_lockable", value); }
+               }
+               public object OwnedById
+               {
+                   get { return (object)this.GetProperty("owned_by_id"); }
+                   set { this.SetProperty("owned_by_id", value); }
+               }
+               public object PermissionId
+               {
+                   get { return (object)this.GetProperty("permission_id"); }
+                   set { this.SetProperty("permission_id", value); }
+               }
+               public string State
+               {
+                   get { return (string)this.GetProperty("state"); }
+                   set { this.SetProperty("state", value); }
+               }
+               public object Team
+               {
+                   get { return (object)this.GetProperty("team_id"); }
+                   set { this.SetProperty("team_id", value); }
+               }
+               public int TotalSparesQTY
+               {
+                   get { return (int)this.GetProperty("total_quantity_recommended"); }
+                   set { this.SetProperty("total_quantity_recommended", value); }
+               }
+
+           #endregion
+
+           #region ExtendedProperties
+               
+           #endregion
+       }
+ }

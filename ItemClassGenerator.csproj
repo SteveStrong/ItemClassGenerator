@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="ApprenticeFoundryRulesAndUnits" Version="4.3.0" />
+    <PackageReference Include="Humanizer" Version="2.14.1" />
     <PackageReference Include="ExcelDataReader" Version="3.6.0" />
     <PackageReference Include="ClosedXML" Version="0.104.1" />
   </ItemGroup>

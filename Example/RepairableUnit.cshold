@@ -1,0 +1,114 @@
+﻿// <copyright file="RepairableUnit.cs" company="SAIC.ReadyOne">
+// Copyright (c) SAIC. All rights reserved.
+// </copyright>
+
+using Aras.IOM;
+using ReadyOne.Common;
+
+namespace ReadyOne.SupportAnalysis.Models
+{
+	public partial class RepairableUnit : ReadyOne.Common.Models.IItemType
+	{
+
+		#region ctor
+
+		public RepairableUnit(IDataAccessLayer dal, Item item = null, string _type = "lsa_RepairableUnit", string action = null) : base(dal, item, _type, action)
+		{ }
+		#endregion
+
+		#region Properties
+
+		public string Description
+		{
+			get { return this.GetProperty("complete_item_name"); }
+			set { this.SetProperty("complete_item_name", value); }
+		}
+
+		public string PartID
+		{
+			get { return this.GetProperty("part_id"); }
+			set { this.SetProperty("part_id", value); }
+		}
+
+		public string CageCode
+		{
+			get { return this.GetProperty("cage_code"); }
+			set { this.SetProperty("cage_code", value); }
+		}
+
+		public string NIIN
+		{
+			get { return this.GetProperty("national_id_item_number"); }
+			set { this.SetProperty("national_id_item_number", value); }
+		}
+
+		public string FSCM
+		{
+			get { return this.GetProperty("federal_supply_classification"); }
+			set { this.SetProperty("federal_supply_classification", value); }
+		}
+
+		public string MTBF
+		{
+			get { return this.GetProperty("mean_time_between_failures"); }
+			set { this.SetProperty("mean_time_between_failures", value); }
+		}
+
+		public string QuantityPerEndItem
+		{
+			get { return this.GetProperty("quantity_per_end_item"); }
+			set { this.SetProperty("quantity_per_end_item", value); }
+		}
+
+		public string UnitOfIssue
+		{
+			get { return this.GetProperty("unit_of_issue"); }
+			set { this.SetProperty("unit_of_issue", value); }
+		}
+
+		public string QuantityStockRecommended
+		{
+			get { return this.GetProperty("total_quantity_recommended"); }
+			set { this.SetProperty("total_quantity_recommended", value); }
+		}
+
+		public string ShelfLife
+		{
+			get { return this.GetProperty("shelf_life"); }
+			set { this.SetProperty("shelf_life", value); }
+		}
+
+		//public string Classification
+		//{
+		//    get { return this.GetProperty("classification"); }
+		//    set { this.SetProperty("classification", value); }
+		//}
+
+		public string UnitPrice
+		{
+			get { return this.GetProperty("unit_price"); }
+			set { this.SetProperty("unit_price", value); }
+		}
+
+		public string ProductionLeadTime
+		{
+			get { return this.GetProperty("production_lead_time"); }
+			set { this.SetProperty("production_lead_time", value); }
+		}
+
+		#endregion
+
+		#region ExtendedProperties
+
+		public Part Part
+		{
+			get
+			{
+				var partItem = dal.GetItem("part", PartID);
+				return new(dal, partItem);
+			}
+		}
+
+		#endregion
+	}
+}
