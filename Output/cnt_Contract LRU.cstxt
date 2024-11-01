@@ -13,7 +13,147 @@
 
            #region Properties
 
-               
+                              public bool IsCurrent
+               {
+                   get { return (bool)this.GetProperty("is_current"); }
+                   set { this.SetProperty("is_current", value); }
+               }
+               public bool Released
+               {
+                   get { return (bool)this.GetProperty("is_released"); }
+                   set { this.SetProperty("is_released", value); }
+               }
+               public bool NewVersion
+               {
+                   get { return (bool)this.GetProperty("new_version"); }
+                   set { this.SetProperty("new_version", value); }
+               }
+               public bool NotLockable
+               {
+                   get { return (bool)this.GetProperty("not_lockable"); }
+                   set { this.SetProperty("not_lockable", value); }
+               }
+               public object CreatedOn
+               {
+                   get { return (object)this.GetProperty("created_on"); }
+                   set { this.SetProperty("created_on", value); }
+               }
+               public object ModifiedOn
+               {
+                   get { return (object)this.GetProperty("modified_on"); }
+                   set { this.SetProperty("modified_on", value); }
+               }
+               public object Description
+               {
+                   get { return (object)this.GetProperty("description"); }
+                   set { this.SetProperty("description", value); }
+               }
+               public int Generation
+               {
+                   get { return (int)this.GetProperty("generation"); }
+                   set { this.SetProperty("generation", value); }
+               }
+               public int SortOrder
+               {
+                   get { return (int)this.GetProperty("sort_order"); }
+                   set { this.SetProperty("sort_order", value); }
+               }
+               public object RepairableUnit
+               {
+                   get { return (object)this.GetProperty("related_id"); }
+                   set { this.SetProperty("related_id", value); }
+               }
+               public object ConfigId
+               {
+                   get { return (object)this.GetProperty("config_id"); }
+                   set { this.SetProperty("config_id", value); }
+               }
+               public object CreatedById
+               {
+                   get { return (object)this.GetProperty("created_by_id"); }
+                   set { this.SetProperty("created_by_id", value); }
+               }
+               public object CurrentState
+               {
+                   get { return (object)this.GetProperty("current_state"); }
+                   set { this.SetProperty("current_state", value); }
+               }
+               public object Contract
+               {
+                   get { return (object)this.GetProperty("id"); }
+                   set { this.SetProperty("id", value); }
+               }
+               public object LockedById
+               {
+                   get { return (object)this.GetProperty("locked_by_id"); }
+                   set { this.SetProperty("locked_by_id", value); }
+               }
+               public object ManagedById
+               {
+                   get { return (object)this.GetProperty("managed_by_id"); }
+                   set { this.SetProperty("managed_by_id", value); }
+               }
+               public object ModifiedById
+               {
+                   get { return (object)this.GetProperty("modified_by_id"); }
+                   set { this.SetProperty("modified_by_id", value); }
+               }
+               public object OwnedById
+               {
+                   get { return (object)this.GetProperty("owned_by_id"); }
+                   set { this.SetProperty("owned_by_id", value); }
+               }
+               public object PermissionId
+               {
+                   get { return (object)this.GetProperty("permission_id"); }
+                   set { this.SetProperty("permission_id", value); }
+               }
+               public object SourceId
+               {
+                   get { return (object)this.GetProperty("source_id"); }
+                   set { this.SetProperty("source_id", value); }
+               }
+               public object Team
+               {
+                   get { return (object)this.GetProperty("team_id"); }
+                   set { this.SetProperty("team_id", value); }
+               }
+               public object Behavior
+               {
+                   get { return (object)this.GetProperty("behavior"); }
+                   set { this.SetProperty("behavior", value); }
+               }
+               public string Classification
+               {
+                   get { return (string)this.GetProperty("classification"); }
+                   set { this.SetProperty("classification", value); }
+               }
+               public string KeyedName
+               {
+                   get { return (string)this.GetProperty("keyed_name"); }
+                   set { this.SetProperty("keyed_name", value); }
+               }
+               public string MajorRev
+               {
+                   get { return (string)this.GetProperty("major_rev"); }
+                   set { this.SetProperty("major_rev", value); }
+               }
+               public string MinorRev
+               {
+                   get { return (string)this.GetProperty("minor_rev"); }
+                   set { this.SetProperty("minor_rev", value); }
+               }
+               public string State
+               {
+                   get { return (string)this.GetProperty("state"); }
+                   set { this.SetProperty("state", value); }
+               }
+               public string Css
+               {
+                   get { return (string)this.GetProperty("css"); }
+                   set { this.SetProperty("css", value); }
+               }
+
            #endregion
 
            #region ExtendedProperties
