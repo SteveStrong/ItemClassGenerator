@@ -29,6 +29,7 @@ namespace ReadyOne.SupportAnalysis.Models
 
 		#region ExtendedProperties
 
+		//SRS I bet this is wrong and never used!!
 		public Contract Contract
 		{
 			get

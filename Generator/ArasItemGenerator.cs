@@ -1,10 +1,13 @@
 
 
+using Humanizer;
 using ItemClassGenerator.Models;
 using System.Text;
 
 namespace ItemClassGenerator.Generators;
 
+// https://www.c-sharpcorner.com/article/getting-started-with-humanizer-in-c-sharp/
+// https://blog.devgenius.io/humanizer-an-exciting-library-in-c-ba2527410e42
 public class ArasItemGenerator
 {
     public ArasItemGenerator()
@@ -31,17 +34,34 @@ public class ArasItemGenerator
         };
     }
 
+    public static string CleanPropertyName(string source)
+    {
+        if ( string.IsNullOrEmpty(source) ) return "";  
+        var name = source.Trim();
+
+        name = name.Replace('/', '-');
+        name = name.Replace('"', '-');
+        name = name.Replace(' ', '-');
+        name = name.Replace(',', '-');
+        name = name.Replace(':', '-');
+        name = name.Trim(Path.GetInvalidFileNameChars());
+        name = name.Trim(Path.GetInvalidPathChars());
+        return name;
+    }
+
     public string FillProperty(ItemTypeSchema schema)
     {
+        var arasName = schema.Name;
         var propertytype = MapDataType(schema.DataType);
-        var propertyname = schema.Label ?? schema.Name;
-        propertyname = propertyname.Replace(" ", "");
+        var propertyname = schema.Label ?? arasName;
+        propertyname = propertyname.Dehumanize();
+        propertyname = CleanPropertyName(propertyname);
 
         var temp1 = $$"""           
                                     public {{propertytype}} {{propertyname}}
                                     {
-                                        get { return ({{propertytype}})this.GetProperty("{{schema.Name}}"); }
-                                        set { this.SetProperty("{{schema.Name}}", value); }
+                                        get { return ({{propertytype}})this.GetProperty("{{arasName}}"); }
+                                        set { this.SetProperty("{{arasName}}", value); }
                                     }
 
                      """;
